@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingresar / Registrarse</title>
+  <link rel="stylesheet" href="styles/Login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="auth-box">
+      <div class="form" id="login-form">
+        <h2>Iniciar Sesión</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="nombre_usuario" id="login-usuario" placeholder="Usuario" required> <!-- Cambiado a 'nombre_usuario' -->
+            <input type="password" name="contrasena" id="login-contrasena" placeholder="Contraseña" required>
+            <button type="submit" id="login-btn">Ingresar</button>
+        </form>
+        <p>¿No tienes una cuenta? <a href="#register-form" class="toggle">Regístrate</a></p>
+      </div>
+
+      <div class="form" id="register-form" style="display: none;">
+        <h2>Registrarse</h2>
+        <form action="/register" method="POST">
+          <input type="text" name="nombre" id="register-nombre" placeholder="Nombre" required>
+          <input type="text" name="nombre_usuario" id="register-usuario" placeholder="Usuario" required>
+          <input type="password" name="contrasena" id="register-contrasena" placeholder="Contraseña" required>
+          <input type="date" name="fecha_nacimiento" id="register-nacimiento" placeholder="Fecha de Nacimiento" required>
+          <input type="email" name="correo_electronico" id="register-email" placeholder="Correo electrónico" required>
+          <input type="text" name="genero" id="register-sexo" placeholder="Género" required>
+          <button type="submit" id="register-btn">Registrarse</button>
+        </form>
+        <p>¿Ya tienes una cuenta? <a href="#login-form" class="toggle">Inicia Sesión</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.toggle').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'none';
+        const targetForm = document.querySelector(this.getAttribute('href'));
+        targetForm.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

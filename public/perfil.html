@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/navegacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Agregar FontAwesome -->
+    <link rel="stylesheet" href="styles/construyendo.css"> <!-- Enlazamos un CSS para estilos generales -->
+</head>
+
+<body class="bg-feed">
+
+    <nav>
+        <div class="logo">
+            <h1>M TalentSync</h1>
+        </div>
+        <!-- Botón de menú en móviles -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+    
+        <div class="nav-links" id="nav-links">
+            <a href="feed.html" onclick="sessionStorage.setItem('tipoPublicacion', 'general')">feed</a>
+            <a href="retos.html">Retos</a>
+            <a href="ListaGrupos.html">Grupos</a>
+            <a href="chat.html">Chat</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="https://www.magneto365.com/es">Servicio de empleo</a>  
+            <a href="nuevaPublicacion.html" onclick="sessionStorage.setItem('tipoPublicacion', 'grupo')">Nueva Publicación</a>
+        </div>
+        
+        <!-- Flecha que se mueve cuando el menú se despliega -->
+        <div id="dropdown-arrow" class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
+
+    </nav>
+    
+
+    <!-- Contenedor para la imagen cuadrada -->
+    <div class="image-container">
+        <img src="../uploads/Magny.jpg" alt="Imagen cuadrada" class="square-image">
+    </div>
+
+
+    <script src="js/obtenerURLPerfil.js"></script>
+    <script>
+        // Llama a la función después de que el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', () => {
+            obtenerIdDeSesion(); // Llama a la función para obtener el ID de sesión
+        });
+    </script>
+
+
+    <script>
+        // Agregar un evento al botón de menú
+        // Agregar un evento al botón de menú
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+        const navLinks = document.getElementById("nav-links");
+        const arrow = document.getElementById("dropdown-arrow");
+        
+        navLinks.classList.toggle("open"); // Cambiar la clase 'open' para mostrar u ocultar los enlaces
+        arrow.classList.toggle("open"); // Agregar clase 'open' para animar la flecha
+    });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#navContainer {
+    flex-shrink: 0; 
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; 
+    background-color: #f0f0f0; 
+}
+
+
+.square-image {
+    width: auto;
+    height: 100%; 
+    max-width: 100vh;
+    object-fit: contain; 
+}
+
+@media (max-width: 768px) {
+    .square-image {
+        width: 100%;
+        height: auto;
+        max-width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    body, html {
+        flex-direction: column; 
+    }
+
+    .image-container {
+        padding: 10px; 
+    }
+
+    .square-image {
+        width: 100%;
+        height: auto; 
+    }
+}
+

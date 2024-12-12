@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Historia</title>
+    <link rel="stylesheet" href="styles/Creacion.css"> <!-- Agrega tus estilos aquí -->
+</head>
+<body>
+    <h1>Agregar Nueva Historia</h1>
+    <form id="formAgregarHistoria" enctype="multipart/form-data">
+        <label for="contenido">Contenido:</label><br>
+        <textarea id="contenido" name="contenido" required></textarea><br>
+
+        <label for="archivo">Archivo (opcional):</label><br>
+        <input type="file" id="archivo" name="archivo"><br>
+
+        <label for="expira">Fecha de expiración:</label><br>
+        <input type="datetime-local" id="expira" name="expira" required><br>
+
+        <button type="submit">Agregar Historia</button>
+    </form>
+
+    <script src="js/agregarhistoria.js"></script>
+</body>
+</html>

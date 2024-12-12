@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/Creacion.css">
+    <title>Crear Grupo</title>
+
+</head>
+<body>
+
+    <form id="crear-grupo-form">
+        <h2>Crear un Grupo</h2>
+        
+        <label for="nombre_grupo">Nombre del Grupo:</label>
+        <input type="text" id="nombre_grupo" name="nombre_grupo" required>
+        
+        <label for="descripcion">Descripción del Grupo:</label>
+        <textarea id="descripcion" name="descripcion" rows="5" required></textarea>
+
+        <div class="button-container">
+            <button type="submit">Crear Grupo</button>
+            <button type="button" class="cancel-btn" id="cancelar-btn">Cancelar</button>
+        </div>
+        
+        <div class="message" id="message"></div>
+    </form>
+    <script src="js/crearGrupo.js"></script>
+    <script src="js/obtenerURLPerfil.js"></script>
+
+</body>
+</html>

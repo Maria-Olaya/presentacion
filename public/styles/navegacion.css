@@ -1,0 +1,146 @@
+/* Estilos generales para el nav */
+nav {
+    background: linear-gradient(90deg, #0056b3, #007bff);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out; 
+}
+
+nav .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #95e1d3;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: calc(100vh - 60px); 
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    nav .logo {
+        margin-bottom: 15px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+    }
+
+    nav .logo {
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 16px;
+        text-align: left;
+    }
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none; 
+    z-index: 1000; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#scrollToTopBtn:focus {
+    outline: none;
+}
+#dropdown-arrow {
+    font-size: 30px;
+    transition: transform 0.3s ease; 
+    display: none; 
+    text-align: center;
+    margin: 0 auto; 
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.4); 
+    padding: 5px; 
+    color: rgba(255, 255, 255, 0.5); 
+}
+
+
+
+.nav-links.open + #dropdown-arrow {
+    display: block; 
+}
+
+

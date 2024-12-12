@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/comentariosybotones.css">
+    <link rel="stylesheet" href="styles/Estilosgenerales.css">
+    <link rel="stylesheet" href="styles/navegacion.css">
+    <link rel="stylesheet" href="styles/publicaciones.css">
+    
+    <title>M TalentSync - Grupo</title>
+</head>
+<body class="bg-feedGrupo"></body>
+
+
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <nav>
+        <div class="logo">
+            <h1>M TalentSync</h1>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        
+        <div class="nav-links" id="nav-links">
+            <a href="feed.html" onclick="sessionStorage.setItem('tipoPublicacion', 'general')"> feed</a>
+            <a href="retos.html">Retos</a>
+            <a href="ListaGrupos.html">Grupos</a>
+            <a href="chat.html">Chat</a>
+            <a href="perfilLink">Perfil</a>
+            <a href="https://www.magneto365.com/es">Servicio de empleo</a>  
+            <a href="nuevaPublicacion.html" onclick="sessionStorage.setItem('tipoPublicacion', 'grupo')">Nueva Publicación</a>
+        
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="feed">
+            <h2>Publicaciones del Grupo</h2>
+            <div id="lista-publicaciones"></div>
+        </div>
+    </div>
+
+
+
+    <script src="js/reacciones.js"></script>
+    <script src="js/comentarios.js"></script>
+    <script src="js/feedGrupo.js"></script>
+    <script type="module" src="js/cargarPublicaciones.js"></script>
+    <script>
+        
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            const navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("open"); 
+        });
+
+        window.onscroll = function() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,24 @@
+{
+  "name": "red-social-master",
+  "version": "1.0.0",
+  "description": "Wild Travel Chile es una red social donde podrás descubrir, explorar y compartir experiencias con otros viajeros a nivel nacional. Cuéntanos tu experiencia acompañada de una fotografía acerca de buenos sitios para visitar o reporta problemas que le ayuden a otros viajeros.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.7",
+    "ws": "^8.18.0"
+  }
+}

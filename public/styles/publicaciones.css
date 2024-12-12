@@ -1,0 +1,172 @@
+.publicacion {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    border: 1px solid #ddd;
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    width: 100%; 
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.perfil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.contenido {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.foto-perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.imagen-publicacion {
+    width: 100%;
+    height: auto;
+}
+
+.video-publicacion {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+/* Publicaciones */
+.post {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+}
+
+.post .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 2px solid #007bff;
+}
+
+.post .post-content {
+    margin-left: 60px; 
+}
+
+.post .post-date {
+    color: #a1a1a1;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.post strong {
+    color: #0056b3;
+}
+
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 200px; 
+    padding: 20px;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.feed {
+    flex-grow: 1;
+    padding: 10px;
+    width: 100%; 
+}
+
+.feed h2 {
+    color: #0056b3;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0; 
+        flex-direction: column; 
+    }
+
+    .feed {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .publicacion {
+        max-width: 100%;
+        padding: 10px; 
+    }
+
+    .post {
+        width: 100%; 
+        padding: 10px; 
+    }
+
+    .post .profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+
+    .post .post-content {
+        margin-left: 50px; 
+    }
+
+    .feed h2 {
+        font-size: 1.2em; 
+    }
+
+
+    .feed {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .publicacion {
+        padding: 8px; 
+    }
+
+    .post .profile-pic {
+        width: 30px;
+        height: 30px;
+    }
+
+    .post .post-content {
+        margin-left: 45px; 
+    }
+
+    .feed h2 {
+        font-size: 1.1em; 
+    }
+
+    .feed {
+        margin-top: 0px;
+    }
+}

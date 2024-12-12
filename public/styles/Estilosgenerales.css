@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d5f1eb; 
+    display: flex;
+    min-height: 100vh; 
+    flex-direction: column; 
+}
+
+header {
+    background: linear-gradient(90deg, #007bff, #0056b3); 
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px; 
+    letter-spacing: 1px; 
+}
+
+.file-indicator {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    border-radius: 5px;
+    color: #0c5460;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reacciones {
+    display: none; 
+}
+
+.bg-feed {
+    background-image: url('../uploads/12backgenerall.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-feedGrupo {
+    background-image: url('../uploads/1fondo1.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-listaGrupo {
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-retos {
+    background-image: url('../uploads/1fondo2.jpg'); /* Asegúrate de que la ruta sea relativa */
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 20px; 
+    }
+
+    .file-indicator {
+        padding: 8px; 
+    }
+
+    .bg-feed, .bg-feedGrupo, .bg-listaGrupo, .bg-retos {
+        background-size: contain; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px; 
+    }
+
+    header {
+        padding: 10px; 
+        flex-direction: column; 
+    }
+
+    header h1 {
+        font-size: 18px; 
+    }
+
+    .file-indicator {
+        padding: 6px; 
+        font-size: 12px; 
+    }
+
+    .bg-feed, .bg-feedGrupo, .bg-listaGrupo, .bg-retos {
+        background-size: contain; 
+    }
+}

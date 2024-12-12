@@ -1,0 +1,129 @@
+<!-- retos.html-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/comentariosybotones.css">
+    <link rel="stylesheet" href="styles/Estilosgenerales.css">
+    <link rel="stylesheet" href="styles/navegacion.css">
+    <link rel="stylesheet" href="styles/publicaciones.css">
+    <title>M TalentSync</title>
+    <style>
+        .reacciones {
+            display: none; 
+        }
+    </style>
+</head>
+
+<body class="bg-retos">
+ 
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <nav>
+        <div class="logo">
+            <h1>M TalentSync</h1>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        
+        <div class="nav-links" id="nav-links">
+            <a href="feed.html" onclick="sessionStorage.setItem('tipoPublicacion', 'general')"> feed</a>
+        <a href="retos.html">Retos</a>
+        <a href="ListaGrupos.html">Grupos</a>
+        <a href="chat.html">Chat</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="https://www.magneto365.com/es">Servicio de empleo</a>
+        <a href="nuevaPublicacion.html" id="linkNuevaReto">Nuevo Reto</a>
+        </div>
+    </nav>
+
+    
+    
+    <div class="container">
+        <div class="feed">
+            <h2>Retos</h2>
+            <div id="lista-publicaciones"></div>
+        </div>
+
+    </div>
+
+    <script>
+        window.tipoPublicacion = 'reto'; 
+
+        document.getElementById('linkNuevaReto').addEventListener('click', () => {
+            sessionStorage.setItem('tipoPublicacion', window.tipoPublicacion); 
+        });
+    </script>
+
+    
+    <script type="module" src="js/cargarPublicaciones.js"></script>
+
+    <script src="js/reacciones.js"></script>
+    <script src="js/comentarios.js"></script>
+    <script src="js/respuestas.js"></script>
+    <script>
+        
+        cargarPublicaciones();
+
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                window.location.reload(); 
+            }
+        });
+        
+    </script>
+
+      
+<script>
+    const socket = new WebSocket('ws://localhost:3000');
+
+    socket.onopen = () => {
+        console.log('Conectado al servidor WebSocket');
+    };
+
+    socket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        if (data.action === 'newPost') {
+            agregarPublicacionAlReto(data.post);
+        }
+    };
+
+    function agregarPublicacionAlReto(post) {
+        const lista = document.getElementById('lista-publicaciones');
+        const div = document.createElement('div');
+        div.className = 'publicacion';
+        div.innerHTML = `
+            <div class="perfil">
+                <img src="${post.foto_perfil}" alt="Foto de perfil" class="foto-perfil">
+                <strong>${post.nombre_usuario}</strong>
+            </div>
+            <p class="contenido">${post.contenido}</p>
+            ${post.archivo ? `<div class="archivo">${renderArchivo(post.archivo)}</div>` : ''}
+            <p><small>Publicado el: ${new Date(post.fecha_publicacion).toLocaleString()}</small></p>
+        `;
+        lista.prepend(div);
+    }
+
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+        const navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("open"); 
+    });
+
+
+    window.onscroll = function() {
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+</script>
+
+</body>
+</html>

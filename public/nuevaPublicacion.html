@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/stylesubir.css"> 
+    <link rel="stylesheet" href="styles/navegacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <title>Crear Nueva Publicación</title>
+</head>
+<body>
+
+
+<nav>
+    <div class="logo">
+        <h1>M TalentSync</h1>
+    </div>
+    <!-- Botón de menú en móviles -->
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    
+    <div class="nav-links" id="nav-links">
+        <a href="feed.html" onclick="sessionStorage.setItem('tipoPublicacion', 'general')"> feed</a>
+        <a href="retos.html">Retos</a>
+        <a href="ListaGrupos.html">Grupos</a>
+        <a href="chat.html">Chat</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="https://www.magneto365.com/es">Servicio de empleo</a>  
+        <a href="nuevaPublicacion.html" onclick="sessionStorage.setItem('tipoPublicacion', 'grupo')">Nueva Publicación</a>
+    
+    </div>
+     <div id="dropdown-arrow" class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
+
+</nav>
+<div class="container">
+    <h2>Crear Nueva Publicación</h2>
+    <form id="formNuevaPublicacion" enctype="multipart/form-data">
+        <input type="hidden" name="tipo_publicacion" id="tipo_publicacion"> <!-- Agregar tipo aquí -->
+        <input type="hidden" name="grupo_id" id="grupo_id"> <!-- Campo oculto para grupo_id -->
+        <textarea id="contenido" name="contenido" placeholder="Escribe tu publicación aquí..." required></textarea>
+        <input type="file" id="archivo" name="archivo">
+        <button type="submit">Publicar</button>
+        <button type="button" id="cancelar">Cancelar</button>
+    </form>
+</div>
+
+<script src="js/nuevaPublicacion.js"></script>
+<script>
+    // Agregar un evento al botón de menú
+    // Agregar un evento al botón de menú
+    // Agregar un evento al botón de menú
+    // Agregar un evento al botón de menú
+// Agregar un evento al botón de menú
+// Agregar un evento al botón de menú
+document.getElementById("menu-toggle").addEventListener("click", function() {
+    const navLinks = document.getElementById("nav-links");
+    const dropdownArrow = document.getElementById("dropdown-arrow");
+
+    // Cambiar la clase 'open' para mostrar u ocultar los enlaces del menú
+    navLinks.classList.toggle("open");
+
+    // Mostrar u ocultar la flecha dependiendo del estado del menú
+    if (navLinks.classList.contains("open")) {
+        dropdownArrow.style.display = "block"; // Mostrar la flecha cuando el menú está abierto
+    } else {
+        dropdownArrow.style.display = "none"; // Ocultar la flecha cuando el menú está cerrado
+    }
+});
+
+
+
+</script>
+
+</body>
+</html>
